@@ -1,0 +1,21 @@
+ export const marques = [
+  {
+    label: "Toyota", image: "images/Toyota.webp",link: "/vente", value:"toyota",},
+  { label: "Jeep", image: "images/jeeplogo.webp", link: "/vente", value:"jeep",},
+  { label: "Hyundai", image: "images/hyundai.webp",link: "/vente", value:"hyundai", },
+  {label: "Renault",image: "images/renaultlogo.webp",link: "/vente", value:"renault",},
+  { label: "Ford", image: "images/ford.webp", link: "/vente", value:"ford"},
+  { label: "Chevrolet", image: "images/chevrolet.webp", link: "/vente", value:"chevrolet"},
+  { label: "Nissan", image: "images/nissan.webp", link: "/vente", value:"nissan"},
+  { label: "Kia", image: "images/kia.webp", link: "/vente", value:"kia"},
+  { label: "Mazda", image: "images/mazda.webp", link: "/vente", value:"mazda"},
+  { label: "CD3", image: "images/cs3.webp", link: "/vente", value:"cd3"},
+  { label: "FIAT", image: "images/fiat.webp", link: "/vente", value:"fiat"},
+  { label: "Honda", image: "images/honda.webp", link: "/vente", value:"honda"},
+  { label: "Fengon", image: "images/fengon.webp", link: "/vente", value:"fengon"},
+  { label: "Foton", image: "images/foton.webp", link: "/vente", value:"foton"},
+  { label: "Dacia", image: "images/dacia.webp", link: "/vente", value:"dacia"},
+  { label: "Haval", image: "images/haval.webp", link: "/vente", value:"haval"},
+  { label: "Peugeot", image: "images/peugeot.webp", link: "/vente", value:"peugeot"},
+  { label: "Citroen", image: "images/citroen.webp", link: "/vente", value:"citroen"},
+];
