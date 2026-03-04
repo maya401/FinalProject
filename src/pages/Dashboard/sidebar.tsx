@@ -6,17 +6,16 @@ import { NavLink, Outlet } from "react-router-dom";
 import { NavBar } from "../../components/navbar";
 
 const barItems = [
-  { name: "profil", icon: <FaUserPen />, link: "profil" },
-  { name: "Vendre", icon: <FaCarRear />, link: "avendre" },
-  { name: "Louer", icon: <FaCarRear />, link: "alouer" },
-  
+  { name: "profil", icon: <FaUserPen />, link: "/dashboard/profil" },
+  { name: "Vendre", icon: <FaCarRear />, link: "/dashboard/avendre" },
+  { name: "Louer", icon: <FaCarRear />, link: "/dashboard/alouer" },
 ];
 
 export default function Sidebar() {
   const [open, setOpen] = React.useState(true);
   return (
     <div className="flex flex-col h-screen ">
-       <NavBar/>
+       <NavBar showOutlet={false} />
      <div className="flex flex-1 overflow-hidden">
       <nav className={`h-full p-3 bg-orange-50 flex flex-col duration-300 border-r border-orange-100 shadow-sm ${open ? "w-64" : "w-20"}`}>  
         <div className="flex justify-between items-center mb-8 px-2 py-4">
@@ -50,18 +49,19 @@ export default function Sidebar() {
           ))}
         </div>
 
-        <div className="flex gap-5 items-center px-3 py-2">
-          <div>
-            <FiLogOut className="text-orange-400 " />
-          </div>
+        <NavLink
+          to="/dashboard/deconnexion"
+          className="flex gap-5 items-center px-3 py-2 cursor-pointer rounded-md hover:bg-orange-300"
+        >
+          <FiLogOut className="text-orange-400" />
           <h2
             className={`${
               !open && "w-0 translate-x-24"
-            }duration-500 overflow-hidden text-orange-400 font-bold text-lg`}
+            } duration-500 overflow-hidden text-orange-400 font-bold text-lg`}
           >
             Deconnexion
           </h2>
-        </div>
+        </NavLink>
       </nav>
 
       <main className="">

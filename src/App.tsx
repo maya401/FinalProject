@@ -13,6 +13,7 @@ import Avendre from "./pages/Dashboard/avendre";
 import Alouer from "./pages/Dashboard/alouer";
 import Deconnexion from "./pages/Dashboard/deconnexion";
 import Dashbord from "./pages/Dashboard/dashbord";
+import AjoutVoiture from "./pages/Dashboard/AjoutVoiture";
 
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
             <Route path="profil" element={<Profil />} />
             <Route path="avendre" element={<Avendre />} />
             <Route path="alouer" element={<Alouer/>} />
+            <Route path="ajout-voiture" element={<AjoutVoiture />} />
             <Route path="deconnexion" element={<Deconnexion />} />
           </Route>
         </Routes>

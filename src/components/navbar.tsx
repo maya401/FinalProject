@@ -13,7 +13,11 @@ const menuItems: menuType[] = [
   
 ];
 
-export function NavBar() {
+interface NavBarProps {
+  showOutlet?: boolean;
+}
+
+export function NavBar({ showOutlet = true }: NavBarProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -87,7 +91,7 @@ export function NavBar() {
           ))}
         </ul>
 
-        <Outlet />
+        {showOutlet && <Outlet />}
       </div>
     </>
   );
