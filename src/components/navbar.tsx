@@ -87,7 +87,7 @@ export function NavBar() {
           ))}
         </ul>
 
-        <Outlet />
+        <Outlet/>
       </div>
     </>
   );
