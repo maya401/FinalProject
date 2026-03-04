@@ -1,4 +1,4 @@
-import { FiEdit2, FiTrash2, FiEye } from 'react-icons/fi';
+
 
 const data = [
   { id: 1, marque: "Peugeot", modele: "208", carburant: "Essence", boiteVitesse: "Manuelle", prix: 25000, statut: "Disponible" },
@@ -10,7 +10,7 @@ const data = [
 export default function Alouer() {
 
   return (
-    <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+    <div className="bg-white rounded-2xl shadow-sm  border border-gray-100 overflow-hidden">
       <div className="p-6 border-b border-gray-100 flex justify-between items-center">
         <h2 className="text-xl font-bold text-gray-800">Flotte de véhicules</h2>
         <button className="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded-xl font-semibold transition-all shadow-md shadow-orange-100">
@@ -61,17 +61,6 @@ export default function Alouer() {
                   </span>
                 </td>
                 <td className="px-6 py-4">
-                  {/* <div className="flex justify-center gap-2">
-                    <button className="p-2 text-gray-400 hover:text-orange-500 hover:bg-orange-50 rounded-lg transition-all">
-                      <FiEye size={18} />
-                    </button>
-                    <button className="p-2 text-gray-400 hover:text-blue-500 hover:bg-blue-50 rounded-lg transition-all">
-                      <FiEdit2 size={18} />
-                    </button>
-                    <button className="p-2 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-all">
-                      <FiTrash2 size={18} />
-                    </button>
-                  </div> */}
                   <button className="text-orange-500 hover:text-orange-700 font-semibold mr-3">Modifier</button>
                   <button className="text-red-400 hover:text-red-600">Supprimer</button>
                 </td>

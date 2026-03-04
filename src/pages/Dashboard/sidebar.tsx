@@ -21,7 +21,7 @@ export default function Sidebar() {
       <nav className={`h-full p-3 bg-orange-50 flex flex-col duration-300 border-r border-orange-100 shadow-sm ${open ? "w-64" : "w-20"}`}>  
         <div className="flex justify-between items-center mb-8 px-2 py-4">
           <a href="/"  className={`${open ? "text-2xl" : "hidden"}`}>
-            SENAUTO
+            SEN<span className="text-orange-500">AUTO</span>
           </a>
           <RiMenuUnfold4Line
             className="text-orange-400 size-5 cursor-pointer"

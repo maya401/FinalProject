@@ -1,3 +1,5 @@
+
+
 const data = [
   { id: 1, marque: "Peugeot", modele: "208", carburant: "Essence", boiteVitesse: "Manuelle", prix: "24567888" },
   { id: 2, marque: "Renault", modele: "Clio", carburant: "Diesel", boiteVitesse: "Automatique", prix: "345768889" },
@@ -15,9 +17,9 @@ export default function CarDashboard() {
         <h2 className="text-2xl font-bold text-gray-800 border-l-4 border-orange-500 pl-3">
           Gestion de la Flotte
         </h2>
-        <button className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg transition duration-200">
+        <a href="/AjoutVoiture" className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg transition duration-200">
           + Ajouter un véhicule
-        </button>
+        </a>
       </div>
 
       <div className="overflow-x-auto bg-white rounded-xl shadow-sm border border-gray-100">
@@ -53,6 +55,7 @@ export default function CarDashboard() {
           </tbody>
         </table>
       </div>
+    
     </div>
   );
 };
