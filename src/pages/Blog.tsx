@@ -17,6 +17,7 @@ export default function BlogPage() {
         avec nous. Nous sommes impatients de vous offrir un contenu de qualité
         pour les passionnés de voitures comme vous !
       </p>
+
       
     </div>
   )

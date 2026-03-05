@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { Mail, Phone, UserRoundPen } from "lucide-react";
+import { useState } from "react";
 import { HiX } from "react-icons/hi";
 
 export default function Profil() {
@@ -8,25 +9,45 @@ export default function Profil() {
       <FileUpload />
 
       <h2 className="text-2xl font-bold">Données personnelles</h2>
+
       <form className="max-w-1/2 flex flex-col gap-2">
         <label>Nom d'utilisateur</label>
-        <input
-          type="text"
-          placeholder="Nom d'utilisateur"
-          className="w-full mt-1 px-4 py-3 rounded-lg bg-gray-100 border-transparent focus:border-orange-500 focus:bg-white focus:ring-0 text-sm transition-all duration-300"
-        />
+        <div className="relative">
+          <input
+            type="text"
+            placeholder="Nom d'utilisateur"
+            className="w-full mt-1 px-4 py-3 pl-12 rounded-lg bg-gray-100 border-transparent text-sm "
+          />
+          <UserRoundPen
+            strokeWidth={1.5}
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500"
+            size={20}
+          />
+        </div>
+
         <label>Email</label>
-        <input
-          type="email"
-          placeholder="maya@gmail.com"
-          className="w-full mt-1 px-4 py-3 rounded-lg bg-gray-100 border-transparent focus:border-orange-500 focus:bg-white focus:ring-0 text-sm transition-all duration-300"
-        />
+        <div className="relative">
+          <input
+            type="email"
+            placeholder="maya@gmail.com"
+            className="w-full mt-1 px-4 py-3 pl-12 rounded-lg bg-gray-100 border-transparent text-sm "
+          />
+          <Mail strokeWidth={1.5} 
+          className="absolute left-4 top-1/2 transform -translate-y-1/3 text-gray-500"
+           size={20}
+          />
+        </div>
         <label>telephone</label>
-        <input
-          type="text"
-          placeholder="+221 77 234 45 64"
-          className="w-full mt-1 px-4 py-3 rounded-lg bg-gray-100 border-transparent focus:border-orange-500 focus:bg-white focus:ring-0 text-sm transition-all duration-300"
-        />
+        <div className="relative">
+          <input
+            type="text"
+            placeholder="+221 77 234 45 64"
+             className="w-full mt-1 px-4 py-3 pl-12 rounded-lg bg-gray-100 border-transparent text-sm "
+          />
+          <Phone strokeWidth={1.5} 
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500"
+          />
+        </div>
         <label>Description</label>
         <textarea
           className="w-full mt-2 px-4 py-3 rounded-lg bg-gray-100 border-transparent focus:border-orange-500 focus:bg-white focus:ring-0 text-sm transition-all duration-300"
@@ -36,7 +57,6 @@ export default function Profil() {
           <button className="bg-orange-400 w-50 h-10 rounded-xl text-white mt-4">
             Enregistrer{" "}
           </button>
-         
         </div>
       </form>
     </div>
@@ -44,10 +64,10 @@ export default function Profil() {
 }
 
 function FileUpload() {
-  const [image, setImage] = useState({ preview: "", raw: "" });
+  const [image, setImage] = useState({ preview: "", raw: null as File | null });
 
-  const handleChange = (e) => {
-    if (e.target.files.length) {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files.length) {
       setImage({
         preview: URL.createObjectURL(e.target.files[0]),
         raw: e.target.files[0],

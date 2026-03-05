@@ -13,6 +13,7 @@ import Avendre from "./pages/Dashboard/avendre";
 import Alouer from "./pages/Dashboard/alouer";
 import Dashbord from "./pages/Dashboard/dashbord";
 import AjoutVoiture from "./pages/Dashboard/AjoutVoiture";
+import LouerVoiture from "./pages/Dashboard/louerVoiture";
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
             <Route path="avendre" element={<Avendre />} />
             <Route path="alouer" element={<Alouer/>} />
             <Route path="ajout-voiture" element={<AjoutVoiture />} />
+            <Route path="louer-voiture" element={<LouerVoiture />} />
           </Route>
         </Routes>
       </BrowserRouter>

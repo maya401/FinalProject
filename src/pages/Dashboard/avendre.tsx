@@ -1,3 +1,4 @@
+import { PencilLine, Trash } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const data = [
@@ -46,9 +47,9 @@ export default function CarDashboard() {
                 </td>
                 <td className="py-4 px-6 text-gray-500">{car.boiteVitesse}</td>
                 <td className="py-4 px-6 font-medium text-orange-600">{car.prix} CFA</td>
-                <td className="py-4 px-6 text-center">
-                  <button className="text-orange-500 hover:text-orange-700 font-semibold mr-3">Modifier</button>
-                  <button className="text-red-400 hover:text-red-600">Supprimer</button>
+                <td className="py-4 px-6 text-center flex justify-center gap-4">
+                 <PencilLine />
+                  <Trash />
                 </td>
               </tr>
             ))}

@@ -1,8 +1,6 @@
 import { useState } from "react";
-import { FaCarRear, FaUserPen } from "react-icons/fa6";
-import { FiLogOut } from "react-icons/fi";
 import { Link, NavLink, Outlet } from "react-router-dom";
-import {  Car, CarFront, LayoutDashboard, ListIndentDecrease, UserRoundPen } from "lucide-react";
+import {  Car, CarFront, LayoutDashboard, ListIndentDecrease, LogOut, UserRoundPen } from "lucide-react";
 
 const barItems = [
   {
@@ -20,10 +18,11 @@ export default function Sidebar() {
   const [open, setOpen] = useState(true);
   return (
     <div className="flex flex-col h-screen ">
-      <div className="bg-orange-50 border-b border-orange-100 shadow-sm px-6 py-4">
+      <div className="bg-orange-50 border-b border-orange-100 shadow-sm px-6 py-4 flex justify-between w-full">
         <Link to="/" className="text-xl flex md:text-4xl font-bold">
           SEN<span className="text-orange-500">AUTO</span>
         </Link>
+        <h2 className="text-orange-500 text-xl font-bold">Admin</h2>
       </div>
       <div className="flex flex-1 overflow-hidden">
         <nav
@@ -57,7 +56,7 @@ export default function Sidebar() {
             to="/"
             className="flex gap-5 items-center px-3 py-2 cursor-pointer rounded-md hover:bg-orange-300"
           >
-            <FiLogOut className="text-orange-400" />
+            <LogOut strokeWidth={1.5}  className={`${open? "size-8" : "size-30"} text-orange-500`}/>
             <h2
               className={`${
                 !open && "w-0 translate-x-24"
