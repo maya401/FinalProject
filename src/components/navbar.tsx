@@ -10,7 +10,6 @@ const menuItems: menuType[] = [
   { name: "LOCATION", link: "/louer" },
   { name: " VENTE", link: "/vente" },
   { name: "BLOG", link: "/blog" },
-  
 ];
 
 export function NavBar() {
@@ -18,32 +17,28 @@ export function NavBar() {
 
   return (
     <>
-      <div >
-
+      <div>
         <div className="flex border-b border-orange-100  justify-between container py-5  items-center">
-         
           <a href="/" className="text-xl flex md:text-2xl font-bold">
-             SEN <span className="text-orange-600 font-bold ">AUTO</span>
+            SEN <span className="text-orange-600 font-bold ">AUTO</span>
           </a>
 
           <div className="flex items-center ">
-            <ul
-              className={`md:flex gap-3  border-r pr-4 hidden `}
-            >
+            <ul className={`md:flex gap-3  border-r pr-4 hidden `}>
               {menuItems.map((item, index) => (
                 <li key={index} className="">
                   <NavLink
                     title={item.name}
                     to={item.link}
                     onClick={() => setIsOpen(false)}
-                   className={
-                    ({isActive}) => isActive ? "text-orange-600 transition-all text-sm duration-200 pb-2  font-medium underline " : "text-black"}
+                    className={({ isActive }) =>
+                      isActive
+                        ? "text-orange-600 transition-all text-sm duration-200 font-medium underline "
+                        : "text-black"
+                    }
                   >
                     {item.name}
                   </NavLink>
-
-                 
-
                 </li>
               ))}
             </ul>
@@ -60,7 +55,6 @@ export function NavBar() {
                 <FaUser className="text-white text-lg" />
                 <span>Se connecter</span>
               </button>
-
             </a>
           </div>
           <RiMenuUnfoldFill
@@ -69,7 +63,7 @@ export function NavBar() {
             aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
           />
         </div>
-{/* menu mobile */}
+        {/* menu mobile */}
         <ul
           className={`${isOpen ? "flex flex-col gap-3 py-4 px-8 bg-white" : "hidden"} md:hidden border-r-2`}
         >
@@ -87,7 +81,7 @@ export function NavBar() {
           ))}
         </ul>
 
-        <Outlet/>
+        <Outlet />
       </div>
     </>
   );

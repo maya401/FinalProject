@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 
 const data = [
   { id: 1, marque: "Peugeot", modele: "208", carburant: "Essence", boiteVitesse: "Manuelle", prix: 25000, statut: "Disponible" },
@@ -13,9 +13,9 @@ export default function Alouer() {
     <div className="bg-white rounded-2xl shadow-sm  border border-gray-100 overflow-hidden">
       <div className="p-6 border-b border-gray-100 flex justify-between items-center">
         <h2 className="text-xl font-bold text-gray-800">Flotte de véhicules</h2>
-        <button className="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded-xl font-semibold transition-all shadow-md shadow-orange-100">
+        <Link to="/dashboard/ajout-voiture" className="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded-xl font-semibold transition-all shadow-md shadow-orange-100">
           + Nouveau véhicule
-        </button>
+        </Link>
       </div>
 
       <div className="overflow-x-auto bg-white rounded-xl shadow-sm border border-gray-100">
