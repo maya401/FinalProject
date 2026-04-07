@@ -1,4 +1,3 @@
-import type { ReactNode } from "react";
 
 export interface menuType{
     name: string;
@@ -11,19 +10,4 @@ export interface CarteProps{
     description?: string;
     className?:string
     
-}
-
-export interface CardProps{
-    id:number
-    marque:ReactNode;
-    modele:string;
-    annee:number;
-    prix:number;
-    imageUrl:string;
-    boiteVitesse?:string;
-    Carburant?:string;
-    className?:string;
-    status?:boolean;
-    value?:string;
-    label?:string;
 }

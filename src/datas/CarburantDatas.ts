@@ -5,8 +5,11 @@ export const carburants = [
   { label: "Electrique", value: "electrique" },
 ];
 
+
+
 export const typesLocation = [
   { label: "Jour", value: "jour" },
   { label: "Semaine", value: "semaine" },
   { label: "Mois", value: "mois" },
 ];
+

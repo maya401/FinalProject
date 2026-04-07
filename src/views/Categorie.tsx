@@ -6,10 +6,10 @@ export default function Categorie() {
   return (
     <div className="container mt-20  flex flex-col mb-10">
       <h1 className="text-center underline">
-        Rechercher par marque de voiture
+     Nos catégories de véhicules
       </h1>
       <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-y-8 mt-10 ">
-        {/* Contenu des catégories par marques */}
+        
         {marques.map((logo, index) => (
           <a
           href={logo.link}

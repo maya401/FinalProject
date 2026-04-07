@@ -63,7 +63,7 @@ export function NavBar() {
             aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
           />
         </div>
-        {/* menu mobile */}
+        
         <ul
           className={`${isOpen ? "flex flex-col gap-3 py-4 px-8 bg-white" : "hidden"} md:hidden border-r-2`}
         >
