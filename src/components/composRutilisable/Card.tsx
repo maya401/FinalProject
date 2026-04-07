@@ -1,6 +1,6 @@
 import { FaGasPump, FaCalendarAlt } from "react-icons/fa";
 import { GiGearStickPattern } from "react-icons/gi";
-import { MdLocationOn } from "react-icons/md"; // Optionnel : pour la localisation si dispo
+import { MdLocationOn } from "react-icons/md"; 
 import type { VenteType } from "../../api/vente_location";
 
 export default function Card(cardProps: VenteType) {
