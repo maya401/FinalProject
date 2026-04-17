@@ -1,4 +1,4 @@
-// import { SiHyundai, SiJeep, SiRenault } from "react-icons/si";
+
 import { useEffect, useState } from "react";
 import { getVente, type VenteType } from "../api/vente_location";
 import Card from "./composRutilisable/Card";

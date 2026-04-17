@@ -2,7 +2,6 @@ import axios from "axios";
 import { useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 
-
 type InputProps = {
   label: string;
   value: string | number;
@@ -26,8 +25,6 @@ function Input({ label, value, onChange, type = "text" }: InputProps) {
   );
 }
 
-
-
 export default function AjoutVoiture() {
   const navigate = useNavigate();
   const [marque, setMarque] = useState("");
@@ -44,7 +41,16 @@ export default function AjoutVoiture() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!marque || !modele || !carburant || !boiteVitesse || !prix || !imageUrl || !description || !annee) {
+    if (
+      !marque ||
+      !modele ||
+      !carburant ||
+      !boiteVitesse ||
+      !prix ||
+      !imageUrl ||
+      !description ||
+      !annee
+    ) {
       setError("Veuillez remplir tous les champs");
       return;
     }
@@ -69,7 +75,6 @@ export default function AjoutVoiture() {
       await axios.post("http://localhost:3000/api/ventes", formData, {
         headers: {
           Authorization: `Bearer ${token}`,
-          "Content-Type": "multipart/form-data",
         },
       });
 
@@ -103,9 +108,23 @@ export default function AjoutVoiture() {
           <Input label="Marque" value={marque} onChange={setMarque} />
           <Input label="Modèle" value={modele} onChange={setModele} />
           <Input label="Carburant" value={carburant} onChange={setCarburant} />
-          <Input label="Boite de vitesse" value={boiteVitesse} onChange={setBoiteVitesse} />
-          <Input label="Prix" type="number" value={prix} onChange={(v: string) => setPrix(Number(v))} />
-          <Input label="Année" type="number" value={annee} onChange={(v: string) => setAnnee(Number(v))} />
+          <Input
+            label="Boite de vitesse"
+            value={boiteVitesse}
+            onChange={setBoiteVitesse}
+          />
+          <Input
+            label="Prix"
+            type="number"
+            value={prix}
+            onChange={(v: string) => setPrix(Number(v))}
+          />
+          <Input
+            label="Année"
+            type="number"
+            value={annee}
+            onChange={(v: string) => setAnnee(Number(v))}
+          />
 
           <textarea
             placeholder="Description..."
@@ -146,7 +165,3 @@ export default function AjoutVoiture() {
     </div>
   );
 }
-
-
-
-

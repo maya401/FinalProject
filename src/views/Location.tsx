@@ -40,10 +40,10 @@ export default function TrosiemeSection() {
           <p className="text-lg">Decouvrez nos voitures à louer</p>
         </div>
 
-        <button className="flex items-center mt-10 hover:underline cursor-pointer">
+        <a href="/louer" className="flex items-center mt-10 hover:underline cursor-pointer">
           <span className="">Voir toutes nos voitures </span>
           <FaChevronRight className="w-8 h-8" />
-        </button>
+        </a>
       </div>
 
       

@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import type { menuType } from "../typage/types";
 import { FaPhoneVolume } from "react-icons/fa6";
 import { FaUser } from "react-icons/fa";
@@ -14,6 +14,11 @@ const menuItems: menuType[] = [
 
 export function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const token = localStorage.getItem("token");
+
+ 
 
   return (
     <>
@@ -50,13 +55,18 @@ export function NavBar() {
                 <span className="font-bold  text-sm">+221 77 234 45 64</span>
               </div>
             </div>
-            <a href="/connexion" className="flex items-center ">
-              <button className="md:flex hidden items-center ml-3 gap-2 bg-orange-600 text-white px-4 py-2  text-sm rounded hover:scale-105 transition-all duration-300 cursor-pointer">
-                <FaUser className="text-white text-lg" />
-                <span>Se connecter</span>
-              </button>
-            </a>
+
+           <button
+              onClick={() =>
+                navigate(token ? "/dashboard" : "/connexion")
+              }
+              className="md:flex hidden items-center ml-3 gap-2 bg-orange-600 text-white px-4 py-2 text-sm rounded hover:scale-105 transition-all duration-300 cursor-pointer"
+            >
+              <FaUser className="text-white text-lg" />
+              <span>{token ? "Dashboard" : "Se connecter"}</span>
+            </button>
           </div>
+
           <RiMenuUnfoldFill
             className="text-2xl md:hidden block hover:scale-110 transition-all duration-300 cursor-pointer"
             onClick={() => setIsOpen((prev) => !prev)}
@@ -65,20 +75,34 @@ export function NavBar() {
         </div>
         
         <ul
-          className={`${isOpen ? "flex flex-col gap-3 py-4 px-8 bg-white" : "hidden"} md:hidden border-r-2`}
+          className={`${
+            isOpen ? "flex flex-col gap-3 py-4 px-8 bg-white" : "hidden"
+          } md:hidden`}
         >
           {menuItems.map((item, index) => (
-            <li key={index} className="">
+            <li key={index}>
               <NavLink
                 title={item.name}
                 to={item.link}
                 onClick={() => setIsOpen(false)}
-                className={`${"hover:text-orange-600 hover:border-b-2 transition-all duration-200 pb-2 font-medium border-orange-700 text-sm"}  `}
+                className="hover:text-orange-600 pb-2 font-medium text-sm"
               >
                 {item.name}
               </NavLink>
             </li>
           ))}
+
+          
+          <button
+            onClick={() => {
+              navigate(token ? "/dashboard" : "/connexion");
+              setIsOpen(false);
+            }}
+            className="mt-4 flex items-center gap-2 bg-orange-600 text-white px-4 py-2 text-sm rounded"
+          >
+            <FaUser />
+            <span>{token ? "Dashboard" : "Se connecter"}</span>
+          </button>
         </ul>
 
         <Outlet />

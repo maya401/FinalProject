@@ -1,5 +1,7 @@
 import React from "react";
+import { toast } from "react-hot-toast/headless";
 import { useNavigate } from "react-router-dom";
+import { X } from "lucide-react";
 
 export default function ConnextionPage() {
   const [email, setEmail] = React.useState("");
@@ -7,7 +9,7 @@ export default function ConnextionPage() {
   const [error, setError] = React.useState("");
   const [loading, setLoading] = React.useState(false);
   const [showPassword, setShowPassword] = React.useState(false);
-  // const [souvenir, setSouvenir] = React.useState(false);
+
   const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -16,8 +18,8 @@ export default function ConnextionPage() {
 
     if (!email || !password) {
       setError("Veuillez remplir tous les champs.");
-      // a changer en toaster
-      alert("Veuillez remplir tous les champs.");
+     
+     toast.error("Veuillez remplir tous les champs.");
       return;
     }
 
@@ -65,8 +67,10 @@ export default function ConnextionPage() {
         </div>
 
         <div className="w-full md:w-1/2 p-8 md:p-12">
-          <div className="text-center md:text-left">
-            <h2 className="text-2xl font-bold text-gray-800">Connexion</h2>
+          <div className="text-center md:text-left relative">
+            <h2 className="text-2xl font-bold text-gray-800 ">Connexion
+               <a className="absolute right-0" href="/"><X strokeWidth={1.5} /></a>
+            </h2>
             <p className="text-gray-500 mt-2">Ravi de vous revoir !</p>
           </div>
 

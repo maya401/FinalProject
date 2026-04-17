@@ -23,7 +23,7 @@ export default function InscriptionPage() {
     try {
       setLoading(true);
 
-      const res = await fetch("/api/auth/signup", {
+      const res = await fetch("http://localhost:3000/api/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -44,7 +44,7 @@ export default function InscriptionPage() {
         throw new Error(data.message || "Erreur d'inscription");
       }
 
-      // redirection après inscription
+    
       window.location.href = "/connexion";
     } catch (err: unknown) {
       if (err instanceof Error) {
@@ -61,7 +61,6 @@ export default function InscriptionPage() {
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
       <div className="max-w-4xl w-full bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row-reverse">
 
-        {/* Left */}
         <div className="hidden md:flex md:w-1/2 bg-linear-to-tr from-orange-600 to-orange-400 p-12 text-white flex-col justify-between items-center text-center">
           <div>
             <h2 className="text-3xl font-bold">Bienvenue à SENAUTO</h2>
@@ -72,7 +71,7 @@ export default function InscriptionPage() {
           <div className="text-sm text-orange-200">© 2026 SENAUTO.</div>
         </div>
 
-        {/* Right */}
+        
         <div className="w-full md:w-1/2 p-8 md:p-12">
           <div className="mb-8">
             <h2 className="text-3xl font-bold text-gray-800">Inscription</h2>

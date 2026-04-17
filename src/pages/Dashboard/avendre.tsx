@@ -36,7 +36,7 @@ export default function CarDashboard() {
   
   const Supprimer = async (id: string) => {
     const confirmerSuprression = window.confirm("Êtes-vous sûr de vouloir supprimer ce véhicule ?");
-    if (confirmerSuprression)  return;
+    if (!confirmerSuprression)  return;
     try{
       await api.delete(`/ventes/${id}`);
       setCars((prevCars) => prevCars.filter((car) => car._id !== id));

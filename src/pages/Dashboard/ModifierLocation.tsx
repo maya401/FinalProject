@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 import api from "../../api/api";
 import { getLocationById, type VenteType } from "../../api/vente_location";
 
@@ -47,11 +48,11 @@ export default function ModifierLocation() {
 
     try {
       await api.put(`/locations/${id}`, form); 
-      alert("Véhicule modifié avec succès");
+      toast.success("Voiture modifiée avec succès 🚗");
       navigate("/dashboard/location");
     } catch (error) {
       console.error(error);
-      alert("Erreur lors de la modification");
+      toast.error("Erreur lors de la modification");
     }
   };
 
