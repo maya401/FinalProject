@@ -23,7 +23,7 @@ export default function InscriptionPage() {
     try {
       setLoading(true);
 
-      const res = await fetch("http://localhost:3000/api/signup", {
+      const res = await fetch("https://backendfp-3.onrender.com/api/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

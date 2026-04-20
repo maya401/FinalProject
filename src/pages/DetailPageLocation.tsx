@@ -6,6 +6,7 @@ import Footer from "../views/footer";
 import { BsWhatsapp } from "react-icons/bs";
 import { useEffect, useState } from "react";
 import { getLocationById, type VenteType } from "../api/vente_location";
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function DetailPageLocation() {
 const { id } = useParams<{ id: string }>();
@@ -125,15 +126,19 @@ useEffect(() => {
                 </div>
               </div>
 
-              <a
-                href="https://wa.link/lr42hp"
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white p-4 rounded-2xl font-bold transition-all shadow-lg shadow-green-200 mt-6"
-              >
-                <BsWhatsapp className="text-2xl" />
-                Discuter sur WhatsApp
-              </a>
+             <button
+              onClick={() => {
+                const url = window.location.href;
+                const message = `Bonjour P'tits Trésors ! 🌟\nJe souhaite commander :\n*${location.modele}*\n\n*${location.prix.toLocaleString()} FCFA*\n\nLien : ${url}\nMerci !`;
+                window.open(
+                  `https://wa.me/221777615841?text=${encodeURIComponent(message)}`,
+                  "_blank",
+                );
+              }}
+              className="w-full bg-[#25D366] text-white py-2 flex items-center justify-center gap-3 font-bold uppercase tracking-widest hover:bg-[#128c7e] transition-colors shadow-none rounded-lg text-sm"
+            >
+              <FaWhatsapp size={24} /> Commander sur WhatsApp
+            </button>
             </div>
           </div>
         </div>

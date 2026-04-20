@@ -72,7 +72,7 @@ export default function AjoutVoiture() {
       formData.append("prix", prix.toString());
       formData.append("image", imageUrl);
 
-      await axios.post("http://localhost:3000/api/ventes", formData, {
+      await axios.post("https://backendfp-3.onrender.com/api/ventes", formData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

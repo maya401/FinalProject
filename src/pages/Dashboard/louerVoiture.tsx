@@ -78,7 +78,7 @@ export default function LouerVoiture() {
 
       formData.append("image", imageUrl);
 
-      await axios.post("http://localhost:3000/api/locations", formData, {
+      await axios.post("https://backendfp-3.onrender.com/api/locations", formData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
