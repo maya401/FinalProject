@@ -5,7 +5,7 @@ import Carte from "./composRutilisable/carte";
 export default function HeroSection() {
  
   return (
-    <div  style={{ backgroundImage: "url('/images/modernFamily.jpg')" }} className=" bg-black/40 bg-blend-multiply bg-center bg-no-repeat bg-cover h-[90vh]  w-full mb-16 ">
+    <div  style={{ backgroundImage: "url('images/modernfFamily.jpg')" }} className=" bg-black/40 bg-blend-multiply bg-center bg-no-repeat bg-cover h-[90vh]  w-full mb-16 ">
       <div className="flex flex-col gap-8 mt-70 container ">
         <Carte
           title="Acheter et louer"
