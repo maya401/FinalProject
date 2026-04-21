@@ -1,4 +1,4 @@
-import { FaChevronRight } from "react-icons/fa6";
+// import { FaChevronRight } from "react-icons/fa6";
 import Carte from "../components/composRutilisable/carte";
 import Card from "../components/composRutilisable/Card";
 import { getLocation, type VenteType } from "../api/vente_location";
@@ -40,10 +40,10 @@ export default function TrosiemeSection() {
           <p className="text-lg">Decouvrez nos voitures à louer</p>
         </div>
 
-        <a href="/louer" className="flex items-center mt-10 hover:underline cursor-pointer">
+        {/* <a href="/louer" className="flex items-center mt-10 hover:underline cursor-pointer">
           <span className="">Voir toutes nos voitures </span>
           <FaChevronRight className="w-8 h-8" />
-        </a>
+        </a> */}
       </div>
 
       

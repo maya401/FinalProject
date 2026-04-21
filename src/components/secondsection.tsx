@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { getVente, type VenteType } from "../api/vente_location";
 import Card from "./composRutilisable/Card";
 import Carte from "./composRutilisable/carte";
-import { FaChevronRight } from "react-icons/fa6";
+// import { FaChevronRight } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
 
@@ -40,13 +40,13 @@ export default function SecondSection() {
           <Carte title="Nouvelles voitures" className={"text-black text-4xl"} />
           <p className="text-lg">Decouvrez notre large gamme de voitures</p>
         </div>
-        <a
+        {/* <a
           href="/vente"
           className="flex items-center gap-2 font-medium hover:underline cursor-pointer"
         >
           Voir toutes nos voitures
           <FaChevronRight className="w-8 h-8" />
-        </a>
+        </a> */}
       </div>
      
       <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 rounded-xl ">
